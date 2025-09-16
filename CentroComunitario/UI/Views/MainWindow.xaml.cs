@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UI.Views;
 
 namespace UI
 {
@@ -22,6 +23,26 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ExitSystemMenuItem(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CoursesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TeachersMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StudentsMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
