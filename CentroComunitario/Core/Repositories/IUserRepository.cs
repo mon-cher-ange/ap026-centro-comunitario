@@ -7,9 +7,11 @@ namespace Core.Repositories
 {
     public interface IUserRepository
     {
-        User GetById(int userId);
-        User GetByUsernameAndPassword(string username, string password);
-        IEnumerable<User> GetAll();
+        User FindById(int id);
+        User FindByUsernameAndPassword(string username, string password);
+        IEnumerable<User> GetAllUsers();
         void Add(User user);
+        bool Update(User user);
+        bool Remove(int id);
     }
 }

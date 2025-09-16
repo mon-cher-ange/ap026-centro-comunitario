@@ -8,6 +8,7 @@ namespace Core.Repositories
     public class UserRepository : IUserRepository
     {
         private List<User> _users;
+        private int _nextId;
 
         public UserRepository()
         {
@@ -16,8 +17,8 @@ namespace Core.Repositories
                 new User
                 {
                     Id = 1,
-                    Username = "a",
-                    Password = "a",
+                    Username = "admin-user",
+                    Password = "admin-passwd",
                     FullName = "John Doe",
                     RoleId = 1
                 },
@@ -25,7 +26,7 @@ namespace Core.Repositories
                 {
                     Id = 2,
                     Username = "teacher-user",
-                    Password = "teacher-user-passwd",
+                    Password = "teacher-passwd",
                     FullName = "Mary Johnson",
                     RoleId = 2
                 },
@@ -33,43 +34,43 @@ namespace Core.Repositories
                 {
                     Id = 3,
                     Username = "receptionist-user",
-                    Password = "receptionist-user-passwd",
+                    Password = "receptionist-passwd",
                     FullName = "Maria Garcia",
                     RoleId = 3
                 }
-
             };
+
+            _nextId = _users.Max(u => u.Id) + 1;
         }
 
-        public User GetById(int userId)
+        public User FindById(int id)
         {
-            foreach (User user in _users)
-            {
-                if (user.Id == userId)
-                    return user;
-            }
-            return null;
+            return _users.FirstOrDefault(u => u.Id == id);
         }
 
-        public User GetByUsernameAndPassword(string username, string password)
+        public User FindByUsernameAndPassword(string username, string password)
         {
-            foreach (User user in _users)
-            {
-                if (user.Username == username && user.Password == password)
-                    return user;
-            }
-            return null;
+            return _users.FirstOrDefault(u => u.Username == username && u.Password == password);
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<User> GetAllUsers()
         {
             return _users;
         }
 
         public void Add(User user)
         {
-            user.Id = _users.Count() + 1;
-            _users.Add(user);
+            throw new NotImplementedException();
+        }
+
+        public bool Update(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
