@@ -18,9 +18,8 @@ namespace Core.Services
 
         public bool Login(string username, string password)
         {
-            User user = _userRepository.GetByUsernameAndPassword(username, password);
-            if (user == null)
-                return false;
+            User user = _userRepository.FindByUsernameAndPassword(username, password);
+            if (user == null) return false;
 
             return true;
         }

@@ -42,5 +42,10 @@ namespace Core
             get { return _email; }
             set { _email = value; }
         }
+
+        public override string ToString()
+        {
+            return Name + " " + LastName;
+        }
     }
 }

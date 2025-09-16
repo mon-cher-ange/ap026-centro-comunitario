@@ -32,17 +32,38 @@ namespace UI
 
         private void CoursesMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            CourseManagementView courseManagementView = new CourseManagementView();
+            courseManagementView.Owner = this;
+            courseManagementView.Closed += new EventHandler(delegate(object s, EventArgs args)
+            {
+                this.Show();
+            });
 
+            courseManagementView.ShowDialog();
         }
 
         private void TeachersMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            TeacherManagementView teacherManagementView = new TeacherManagementView();
+            teacherManagementView.Owner = this;
+            teacherManagementView.Closed += new EventHandler(delegate(object s, EventArgs args)
+            {
+                this.Show();
+            });
 
+            teacherManagementView.ShowDialog();
         }
 
         private void StudentsMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            StudentManagementView studentManagementView = new StudentManagementView();
+            studentManagementView.Owner = this;
+            studentManagementView.Closed += new EventHandler(delegate(object s, EventArgs args)
+            {
+                this.Show();
+            });
 
+            studentManagementView.ShowDialog();
         }
     }
 }
