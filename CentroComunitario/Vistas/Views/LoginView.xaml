@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vistas.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="clr-namespace:Vistas.Components"
+        Title="Inicio de Sesión"
+        Height="350"
+        Width="450"
+        WindowStartupLocation="CenterScreen" xmlns:my="clr-namespace:Vistas.Components">
+    <Grid Margin="20" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Title-->
+        <TextBlock Grid.Row="0"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Text="Iniciar sesión">
+        </TextBlock>
+        <control:LoginControl Grid.Row="1"
+                              HorizontalAlignment="Center"
+                              x:Name="Login">
+        </control:LoginControl>
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Ingresar"
+                    Click="LogIn_Click"
+                    Width="100"
+                    Height="30"
+                    Margin="4">
+            </Button>
+            <Button Content="Volver"
+                    Click="GoBack_Click"
+                    Height="30"
+                    Margin="4"
+                    Width="100">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

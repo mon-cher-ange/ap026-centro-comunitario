@@ -1,0 +1,99 @@
+﻿<Window x:Class="Vistas.Views.CourseManagementView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ventana de Gestión Curso"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Course Management"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,10"
+                   Grid.ColumnSpan="2">
+        </TextBlock>
+        <GroupBox Header="Available Courses"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="5">
+            <DataGrid Name="CourseDataGrid"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      SelectionChanged="CourseDataGrid_SelectionChanged"
+                      Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <GroupBox Name="CourseGroupBox"
+                  Header="Nuevo Curso"
+                  Grid.Row="1"
+                  Grid.Column="2"
+                  Margin="4">
+            <StackPanel Margin="4">
+                <Label Content="Nombre"></Label>
+                <TextBox Name="CourseNameTextBox"></TextBox>
+                <Label Content="Descripción"></Label>
+                <TextBox Name="CourseDescriptionTextBox"
+                         Height="50"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap">
+                </TextBox>
+                <Label Content="Cupo"></Label>
+                <TextBox Name="CourseQuotaTextBox"></TextBox>
+                <Label Content="Fecha de Inicio"></Label>
+                <DatePicker Name="CourseStartDatePicker"></DatePicker>
+                <Label Content="Fecha de Finalización"></Label>
+                <DatePicker Name="CourseEndDatePicker"></DatePicker>
+                <Label Content="Estado"></Label>
+                <ComboBox Name="CourseStateComboBox"></ComboBox>
+                <Label Content="Docente a cargo"></Label>
+                <ComboBox Name="CourseTeacherComboBox"></ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,10">
+            <Button Name="AddButton"
+                    Content="Agregar"
+                    Click="AddButton_Click"
+                    Style="{StaticResource ResourceKey=AddButtonStyle}">
+            </Button>
+            <Button Name="UpdateButton"
+                    Content="Actualizar"
+                    Click="UpdateButton_Click"
+                    Style="{StaticResource ResourceKey=UpdateButtonStyle}">
+            </Button>
+            <Button Name="DeleteButton"
+                    Content="Eliminar"
+                    Click="DeleteButton_Click"
+                    Style="{StaticResource ResourceKey=DeleteButtonStyle}">
+            </Button>
+            <Button Name="ClearButton"
+                    Content="Limpiar"
+                    Click="ClearButton_Click"
+                    Style="{StaticResource ResourceKey=CleanButtonStyle}">
+            </Button>
+            <Button Name="CloseButton"
+                    Content="Salir"
+                    Click="CloseButton_Click"
+                    Style="{StaticResource ResourceKey=CloseButtonStyle}">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
