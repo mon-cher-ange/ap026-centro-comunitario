@@ -1,0 +1,103 @@
+﻿<Window x:Class="Vistas.Views.TeacherManagementView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ventana de Gestión Docente"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="24"
+                   FontWeight="Bold"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   Margin="0,10"
+                   Text="Gestión Docente">
+        </TextBlock>
+        <GroupBox Header="Docentes disponibles"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="5">
+            <DataGrid Name="TeacherDataGrid"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      SelectionChanged="TeacherDataGrid_SelectionChanged"
+                      Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="DNI" Binding="{Binding DNI}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Apellido" Binding="{Binding LastName}" Width="*"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <GroupBox Name="TeacherGroupBox"
+                  Header="Nuevo Docente"
+                  Grid.Row="1"
+                  Grid.Column="2"
+                  Margin="4">
+            <StackPanel Margin="4">
+                <Label Content="DNI"
+                       Style="{StaticResource ResourceKey=TeacherLabelStyle}">
+                </Label>
+                <TextBox Name="TeacherDNITextBox"
+                         Style="{StaticResource ResourceKey=TeacherTextBoxStyle}">
+                </TextBox>
+                <Label Content="Nombre"
+                       Style="{StaticResource ResourceKey=TeacherLabelStyle}">
+                </Label>
+                <TextBox Name="TeacherNameTextBox"
+                         Style="{StaticResource ResourceKey=TeacherTextBoxStyle}"></TextBox>
+                <Label Content="Apellido"
+                       Style="{StaticResource ResourceKey=TeacherLabelStyle}">
+                </Label>
+                <TextBox Name="TeacherLastNameTextBox"
+                         Style="{StaticResource ResourceKey=TeacherTextBoxStyle}"></TextBox>
+                <Label Content="Correo electrónico"
+                       Style="{StaticResource ResourceKey=TeacherLabelStyle}">
+                </Label>
+                <TextBox Name="TeacherEmailTextBox"
+                         Style="{StaticResource ResourceKey=TeacherTextBoxStyle}"></TextBox>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,10">
+            <Button Name="AddButton"
+                    Content="Agregar"
+                    Click="AddButton_Click"
+                    Style="{StaticResource ResourceKey=TeacherButtonStyle}">
+            </Button>
+            <Button Name="UpdateButton"
+                    Content="Actualizar"
+                    Click="UpdateButton_Click"
+                    Style="{StaticResource ResourceKey=TeacherButtonStyle}">
+            </Button>
+            <Button Name="DeleteButton"
+                    Content="Eliminar"
+                    Click="DeleteButton_Click"
+                    Style="{StaticResource ResourceKey=TeacherButtonStyle}">
+            </Button>
+            <Button Name="ClearButton"
+                    Content="Limpiar"
+                    Click="ClearButton_Click"
+                    Style="{StaticResource ResourceKey=TeacherButtonStyle}">
+            </Button>
+            <Button Name="CloseButton"
+                    Content="Salir"
+                    Click="CloseButton_Click"
+                    Style="{StaticResource ResourceKey=TeacherButtonStyle}">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

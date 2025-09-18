@@ -1,0 +1,29 @@
+﻿
+    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Botones-->
+    <Style x:Key="TeacherButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#d8dee9"></Setter>
+        <Setter Property="BorderBrush" Value="#3b4252"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Foreground" Value="#2e3440"></Setter>
+        <Setter Property="Margin" Value="16,0"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+
+    <!--Etiquetas-->
+    <Style x:Key="TeacherLabelStyle" TargetType="Label">
+        <Setter Property="Padding" Value="0,8"></Setter>
+        <Setter Property="Foreground" Value="#2e3440"></Setter>
+    </Style>
+    
+    <!--Cuadros de Texto-->
+    <Style x:Key="TeacherTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="#d8dee9"></Setter>
+        <Setter Property="BorderBrush" Value="#3b4252"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Foreground" Value="#2e3440"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+</ResourceDictionary>
